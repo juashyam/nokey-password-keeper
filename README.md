@@ -10,7 +10,7 @@ It is highly influenced by my personal usage, not ready for production. Please f
 
 Instead of installing the extension from the Store, you'll install it locally, so that you can possibly modify it and quickly test the changes.
 
-Installing locally is sometimes called sideloading an extension.
+Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and follow the instructions below for your respective browser.
 
 [Installation in Chrome](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
 
