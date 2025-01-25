@@ -18,6 +18,11 @@ Installing locally is sometimes called sideloading an extension.
 
 **Note:** Select the **src** directory which contains the extension's source files, such as manifest.json, and then click the Select Folder button.
 
+## 🖥 Preview
+
+![nokey_preview](https://github.com/user-attachments/assets/c3010336-3ada-4f49-8745-50084aa11b5e)
+
+
 ## 🏛️ License
 
 The module is released under the [MIT license](https://github.com/juashyam/nokey-password-keeper/blob/main/LICENSE).
