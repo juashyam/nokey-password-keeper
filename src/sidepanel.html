@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link media="all" rel="stylesheet" href="assets/styles.css"/>
+        <script defer nonce="a23gbfz9e" src="assets/alpine.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>NoKey</h1>
+        </header>
+        <main>
+            <section class="spm-main-container" x-data="spm">
+                <div class="spm-pwlist-container">
+                    <div class="spm-pwlist-inner">
+                        <div class="spm-pwlist-table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Instance</th>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Password</th>
+                                    </tr>
+                                </thead>
+                                <tbody x-html="spm_pwlist_html">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <span>made with ❤️ by <a target="_blank" href="https://github.com/juashyam">juashyam</a>.</span>
+            <p class="disclaimer">
+                It is highly influenced by my personal usage, not ready for
+                production. Please feel free to use it at your discretion.
+            </p>
+        </footer>
+        <script src="assets/sidepanel.js"></script>
+    </body>
+</html>

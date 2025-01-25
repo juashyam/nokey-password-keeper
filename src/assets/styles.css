@@ -1,0 +1,156 @@
+body {
+    margin: 0 auto;
+}
+
+main {
+    padding: 10px;
+}
+
+header {
+    padding: 10px;
+    background: rgb(34, 34, 34);
+    background: linear-gradient(90deg,
+            rgba(34, 34, 34, 1) 0%,
+            rgba(0, 0, 0, 1) 100%);
+}
+
+h1 {
+    text-align: center;
+    margin: 5px 0;
+    color: #ffffff;
+}
+
+h2 {
+    text-decoration: underline;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.action-container {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+button#showContent {
+    background: rgb(34, 34, 34);
+    background: linear-gradient(90deg,
+            rgba(34, 34, 34, 1) 0%,
+            rgba(0, 0, 0, 1) 100%);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#jsonOutputContainer {
+    padding: 0 10px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    overflow: auto;
+}
+
+.jsonOutput {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: #acacac;
+}
+
+footer {
+    width: 100%;
+    padding: 10px;
+    background-color: #f5f5f5;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.spm-main-container {
+    padding: 0.75rem 0;
+}
+
+.spm-pwlist-container {
+    max-width: 1280px;
+}
+
+.spm-pwlist-inner {
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.spm-pwlist-table-container {
+    overflow: scroll;
+    height: 480px;
+}
+
+.spm-pwlist-table-container table {
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: left;
+    color: #333333;
+}
+
+.spm-pwlist-table-container table thead {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #333333;
+    text-transform: titlecase;
+    background-color: #f9fafa;
+}
+
+.spm-pwlist-table-container table thead tr th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.spm-pwlist-table-container table tbody tr {
+    border-bottom-width: 1px;
+    font-size: 1rem;
+}
+
+.spm-pwlist-table-container table tbody tr th {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 500;
+    color: #111827;
+    word-wrap: break-word;
+    max-width: 50px;
+}
+
+.spm-pwlist-table-container table tbody tr td {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+.copy-to-clipboard {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    color: #6b7280;
+}
+
+.copy-to-clipboard svg {
+    width: 0.875rem;
+    height: 0.875rem;
+}
