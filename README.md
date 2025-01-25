@@ -16,6 +16,8 @@ Installing locally is sometimes called sideloading an extension.
 
 [Installation in Microsoft Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/part1-simple-extension#install-the-sample-locally)
 
+**Note:** Select the **src** directory which contains the extension's source files, such as manifest.json, and then click the Select Folder button.
+
 ## Authors
 
 [Shyam Kumar](https://github.com/juashyam)
