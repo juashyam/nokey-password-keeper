@@ -18,10 +18,16 @@ Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and f
 
 **Note:** Select the **src** directory which contains the extension's source files, such as manifest.json, and then click the Select Folder button.
 
+## 📄 Configuration
+
+Edit `src/data/password.json` file to add/update/delete accounts and reload the extension in browser.
+
+![nokey_configuration](https://github.com/user-attachments/assets/403498ea-190c-4dc2-a230-4217a21dc434)
+
+
 ## 🖥 Preview
 
 ![nokey_preview](https://github.com/user-attachments/assets/c3010336-3ada-4f49-8745-50084aa11b5e)
-
 
 ## 🏛️ License
 
