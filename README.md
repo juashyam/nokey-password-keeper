@@ -1,16 +1,16 @@
-# NoKey - A Stupid Password Keeper
+![NoKey - A Stupid Password Keeper](https://github.com/user-attachments/assets/5543a336-5215-42ac-bd37-2c0a2665e226)
 
 NoKey - A Stupid Password Keeper is a Chrome/Edge extension to display records from a JSON file.
 
-## Disclaimer
+## ❗ Disclaimer
 
 It is highly influenced by my personal usage, not ready for production. Please feel free to use it at your discretion.
 
-## Installation
+## 🚀 Installation
 
 Instead of installing the extension from the Store, you'll install it locally, so that you can possibly modify it and quickly test the changes.
 
-Installing locally is sometimes called sideloading an extension.
+Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and follow the instructions below for your respective browser.
 
 [Installation in Chrome](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
 
@@ -18,11 +18,17 @@ Installing locally is sometimes called sideloading an extension.
 
 **Note:** Select the **src** directory which contains the extension's source files, such as manifest.json, and then click the Select Folder button.
 
-## Authors
+## 📄 Configuration
 
-[Shyam Kumar](https://github.com/juashyam)
+Edit `src/data/password.json` file to add/update/delete accounts and reload the extension in browser.
+
+![nokey_configuration](https://github.com/user-attachments/assets/403498ea-190c-4dc2-a230-4217a21dc434)
 
 
-## License
+## 🖥 Preview
+
+![nokey_preview](https://github.com/user-attachments/assets/c3010336-3ada-4f49-8745-50084aa11b5e)
+
+## 🏛️ License
 
 The module is released under the [MIT license](https://github.com/juashyam/nokey-password-keeper/blob/main/LICENSE).
