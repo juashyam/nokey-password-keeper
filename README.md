@@ -1,6 +1,10 @@
 ![NoKey - A Stupid Password Keeper](https://github.com/user-attachments/assets/6799d6c8-83bd-45cb-a268-2276bab445f1)
 
-NoKey - A Stupid Password Keeper is a Chrome/Edge extension to save/display records from the IndexedDB.
+NoKey - A Stupid Password Keeper is a lightweight Chrome/Edge extension designed to simplify your daily development workflow. It allows you to securely store and manage login credentials locally using the browser's IndexedDB.
+
+With its simple interface, you can quickly add, retrieve, and copy usernames and passwords, eliminating the need to search through files or notes. NoKey is perfect for developers and tech professionals who need a no-fuss solution for managing admin accounts and other login information.
+
+All data is stored locally, ensuring privacy and quick access. Download NoKey today and streamline your workflow!
 
 ## ❗ Disclaimer
 
