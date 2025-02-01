@@ -3,7 +3,7 @@
   "short_name": "NoKey",
   "version": "1.0.0",
   "manifest_version": 3,
-  "description": "NoKey - A Stupid Password Keeper is a Chrome/Edge extension to display records from a JSON file.",
+  "description": "NoKey - A Stupid Password Keeper: Easily store and retrieve login credentials locally using IndexedDB. Perfect for developers!",
   "icons": {
     "16": "icons/padlock16x16.png",
     "32": "icons/padlock32x32.png",
