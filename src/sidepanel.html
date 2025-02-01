@@ -5,30 +5,79 @@
         <link media="all" rel="stylesheet" href="assets/styles.css"/>
         <script defer nonce="a23gbfz9e" src="assets/alpine.min.js"></script>
     </head>
-    <body>
+    <body x-data="spm" @keydown.escape="hideModal">
         <header>
             <h1>NoKey</h1>
         </header>
         <main>
-            <section class="spm-main-container" x-data="spm">
+            <section class="spm-main-container">
                 <div class="spm-pwlist-container">
-                    <div class="spm-pwlist-inner">
-                        <div class="spm-pwlist-table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Instance</th>
-                                        <th scope="col">User</th>
-                                        <th scope="col">Password</th>
-                                    </tr>
-                                </thead>
-                                <tbody x-html="spm_pwlist_html">
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="spm-pwlist-header">
+                        <button x-on:click="showModal" type="button" tabindex="-1">Add New</button>
+                    </div>
+                    <div class="spm-pwlist-usage">
+                        <p>usage: click on user/password to copy to clipboard.</p>
+                    </div>
+                    <div class="spm-pwlist-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Instance</th>
+                                    <th scope="col">User</th>
+                                    <th scope="col">Password</th>
+                                </tr>
+                            </thead>
+                            <tbody x-html="spm_pwlist_html">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
+            <div x-show="isModalOpen" class="addnew-modal-container">
+                <div class="overlay"></div>
+                <div class="addnew-modal-inner-container">
+                    <div @click.away="hideModal" class="addnew-modal-inner">
+                        <div class="addnew-modal-form-container">
+                            <div class="modal-close-container" style="">
+                                <button type="button" class="z-50 cursor-pointer" @click="hideModal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="addnew-modal-form" style="">
+                                <form>
+                                    <div class="field-container">
+                                        <label for="name">Name</label>
+                                        <input id="name" type="text" placeholder="Required" required/>
+                                    </div>
+                                    <div class="field-container">
+                                        <label for="user">User</label>
+                                        <input id="user" type="text" placeholder="Required" required/>
+                                    </div>
+                                    <div class="field-container">
+                                        <label for="password">Password</label>
+                                        <input id="password" type="text" placeholder="Required" required/>
+                                    </div>
+                                    <div class="field-container last">
+                                        <label for="url">Url</label>
+                                        <input id="url" type="text" placeholder="Optional"/>
+                                    </div>
+                                    <div class="field-container validation" x-show="showValidation">
+                                        <p>Please fill all required fields.</p>
+                                    </div>
+                                    <div class="field-container success" x-show="showSuccess">
+                                        <p>New record is added successfully.</p>
+                                    </div>
+                                    <div class="action-container">
+                                        <button x-on:click="addNew" type="button" tabindex="-1">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <span>made with ❤️ by <a target="_blank" href="https://github.com/juashyam">juashyam</a>.</span>

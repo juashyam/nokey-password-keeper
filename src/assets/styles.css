@@ -1,11 +1,9 @@
 body {
     margin: 0 auto;
 }
-
 main {
     padding: 10px;
 }
-
 header {
     padding: 10px;
     background: rgb(34, 34, 34);
@@ -13,24 +11,16 @@ header {
             rgba(34, 34, 34, 1) 0%,
             rgba(0, 0, 0, 1) 100%);
 }
-
 h1 {
     text-align: center;
     margin: 5px 0;
     color: #ffffff;
 }
-
 h2 {
     text-decoration: underline;
     text-align: center;
     margin: 5px 0;
 }
-
-.action-container {
-    margin-top: 10px;
-    margin-bottom: 40px;
-}
-
 button#showContent {
     background: rgb(34, 34, 34);
     background: linear-gradient(90deg,
@@ -44,29 +34,10 @@ button#showContent {
     cursor: pointer;
     border-radius: 3px;
 }
-
-#jsonOutputContainer {
-    padding: 0 10px;
-    border: 2px solid #ccc;
-    border-radius: 3px;
-    font-size: 14px;
-    overflow: auto;
-}
-
-.jsonOutput {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    margin: 10px 0;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 5px;
-}
-
 .disclaimer {
     font-size: 12px;
     color: #acacac;
 }
-
 footer {
     width: 100%;
     padding: 10px;
@@ -75,26 +46,13 @@ footer {
     position: static;
     bottom: 0;
 }
-
-.spm-main-container {
-    padding: 0.75rem 0;
-}
-
 .spm-pwlist-container {
     max-width: 1280px;
 }
-
-.spm-pwlist-inner {
-    overflow: hidden;
-    position: relative;
-    background-color: #ffffff;
-}
-
 .spm-pwlist-table-container {
     overflow: scroll;
     height: 480px;
 }
-
 .spm-pwlist-table-container table {
     width: 100%;
     font-size: 0.875rem;
@@ -102,7 +60,6 @@ footer {
     text-align: left;
     color: #333333;
 }
-
 .spm-pwlist-table-container table thead {
     font-size: 1rem;
     line-height: 1rem;
@@ -110,19 +67,16 @@ footer {
     text-transform: titlecase;
     background-color: #f9fafa;
 }
-
 .spm-pwlist-table-container table thead tr th {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
-
 .spm-pwlist-table-container table tbody tr {
     border-bottom-width: 1px;
     font-size: 1rem;
 }
-
 .spm-pwlist-table-container table tbody tr th {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -133,11 +87,135 @@ footer {
     word-wrap: break-word;
     max-width: 50px;
 }
-
 .spm-pwlist-table-container table tbody tr td {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    cursor: pointer;
+}
+.spm-pwlist-header {
+    display: flex;justify-content: flex-end;
+}
+.spm-pwlist-header button {
+    border:0;
+    border-radius:0.375rem;
+    background-color:rgb(59,130,246);
+    padding:0.5rem 1rem;
+    font-size:0.875rem;
+    line-height:1.25rem;
+    font-weight:600;
+    color:rgb(255,255,255);
+    opacity:1;
+    outline:2px solid transparent;
+    outline-offset:2px;
+    cursor: pointer;
+}
+.spm-pwlist-usage p {
+    font-size: 12px;
+    color: #acacac;
+    font-style: italic;
+}
+.overlay {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    --bg-opacity: 0.8;
+    opacity: 0.8;
+}
+.addnew-modal-inner-container {
+    overflow: auto;
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+}
+.addnew-modal-inner {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    border-radius: 0.25rem;
+    max-width: 48rem;
+    text-align: left;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 99;
+}
+.modal-close-container {
+    display: flex;justify-content: flex-end;
+}
+.modal-close-container button {
+    z-index: 50;cursor: pointer;
+    border: 0;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    background-color: rgb(59, 130, 246);
+    color:rgb(255,255,255);
+    opacity:1;
+    outline:2px solid transparent;
+    outline-offset:2px;
+    cursor: pointer;
+}
+.addnew-modal-form {
+    display: flex; justify-content: space-between; align-items: center;
+}
+.addnew-modal-form .field-container {
+    margin-bottom: 0.5rem;
+}
+.addnew-modal-form .field-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    color: #374151;
+}
+.addnew-modal-form .field-container input {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    width: 100%;
+    line-height: 1.25;
+    color: #374151;
+    appearance: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.field-container.validation p {
+    font-size: 12px;
+    color: #EF4444;
+    font-weight: 600;
+}
+.field-container.success p {
+    font-size: 12px;
+    color: #065F46;
+    font-weight: 600;
+}
+.action-container button {
+    border:0;
+    border-radius:0.375rem;
+    background-color:rgb(59,130,246);
+    padding:0.5rem 1rem;
+    font-size:0.875rem;
+    line-height:1.25rem;
+    font-weight:600;
+    color:rgb(255,255,255);
+    opacity:1;
+    outline:2px solid transparent;
+    outline-offset:2px;
     cursor: pointer;
 }

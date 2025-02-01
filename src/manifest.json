@@ -1,6 +1,6 @@
 {
   "name": "NoKey - A Stupid Password Keeper",
-  "short_name": "NoKey - A Stupid Password Keeper",
+  "short_name": "NoKey",
   "version": "1.0.0",
   "manifest_version": 3,
   "description": "NoKey - A Stupid Password Keeper is a Chrome/Edge extension to display records from a JSON file.",
