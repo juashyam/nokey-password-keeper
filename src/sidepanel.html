@@ -2,83 +2,43 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link media="all" rel="stylesheet" href="assets/styles.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script defer nonce="a23gbfz9e" src="assets/alpine.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="assets/styles.css"/>
     </head>
     <body x-data="spm" @keydown.escape="hideModal">
-        <header>
-            <h1>NoKey</h1>
-        </header>
-        <main>
-            <section class="spm-main-container">
-                <div class="spm-pwlist-container">
-                    <div class="spm-pwlist-header">
-                        <button x-on:click="showModal" type="button" tabindex="-1">Add New</button>
+        <div class="container">
+            <header>
+              <h1>NoKey - A Stupid Password Keeper</h1>
+              <!-- <input type="text" id="search" placeholder="Search..."> -->
+            </header>
+            <main>
+                <section class="action-bar">
+                    <button class="add-entry" x-on:click="showModal">
+                      <span class="material-icons">add</span> Add New Entry
+                    </button>
+                </section>
+                <section class="list-container">
+                    <div class="list" x-html="spm_pwlist_html">
                     </div>
-                    <div class="spm-pwlist-usage">
-                        <p>usage: click on user/password to copy to clipboard.</p>
+                </section>
+                <section class="addnew-modal-container" x-show="isModalOpen">
+                    <div class="overlay" id="overlay"></div>
+                    <div class="modal" id="modal" @click.away="hideModal">
+                        <input id="name" type="text" placeholder="Enter Instance Name (Required)">
+                        <input id="user" type="text" placeholder="Enter Username (Required)">
+                        <input id="password" type="text" placeholder="Enter Password (Required)">
+                        <input id="url" type="text" placeholder="Enter Url (Optional)">
+                        <div class="error-message" x-show="showError">Please fill out all required fields.</div>
+                        <div class="success-message" x-show="showSuccess">Added new record successfully!</div>
+                        <button x-on:click="addNew">Save</button>
+                        <button @click="hideModal">Close</button>
                     </div>
-                    <div class="spm-pwlist-table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Instance</th>
-                                    <th scope="col">User</th>
-                                    <th scope="col">Password</th>
-                                </tr>
-                            </thead>
-                            <tbody x-html="spm_pwlist_html">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-            <div x-show="isModalOpen" class="addnew-modal-container">
-                <div class="overlay"></div>
-                <div class="addnew-modal-inner-container">
-                    <div @click.away="hideModal" class="addnew-modal-inner">
-                        <div class="addnew-modal-form-container">
-                            <div class="modal-close-container" style="">
-                                <button type="button" class="z-50 cursor-pointer" @click="hideModal">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="addnew-modal-form" style="">
-                                <form>
-                                    <div class="field-container">
-                                        <label for="name">Name</label>
-                                        <input id="name" type="text" placeholder="Required" required/>
-                                    </div>
-                                    <div class="field-container">
-                                        <label for="user">User</label>
-                                        <input id="user" type="text" placeholder="Required" required/>
-                                    </div>
-                                    <div class="field-container">
-                                        <label for="password">Password</label>
-                                        <input id="password" type="text" placeholder="Required" required/>
-                                    </div>
-                                    <div class="field-container last">
-                                        <label for="url">Url</label>
-                                        <input id="url" type="text" placeholder="Optional"/>
-                                    </div>
-                                    <div class="field-container validation" x-show="showValidation">
-                                        <p>Please fill all required fields.</p>
-                                    </div>
-                                    <div class="field-container success" x-show="showSuccess">
-                                        <p>New record is added successfully.</p>
-                                    </div>
-                                    <div class="action-container">
-                                        <button x-on:click="addNew" type="button" tabindex="-1">Save</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+                </section>
+            </main>
+
+        </div>
         <footer>
             <span>made with ❤️ by <a target="_blank" href="https://github.com/juashyam">juashyam</a>.</span>
             <p class="disclaimer">

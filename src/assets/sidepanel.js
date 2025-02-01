@@ -5,7 +5,7 @@ document.addEventListener("alpine:init", () => {
       dbConnection: null,
       spm_pwlist_html: "",
       isModalOpen: false,
-      showValidation: false,
+      showError: false,
       showSuccess: false,
 
       // entry point
@@ -57,18 +57,26 @@ document.addEventListener("alpine:init", () => {
       },
       // generate HTML for password DB
       renderRecord(record) {
-        let urlHtml = '';
-        if (record.url === undefined || record.url === null || record.url === '') {
-          urlHtml = `<span>${record.name}</span>`;
-        } else {
-          urlHtml = `<a href="${record.url}" target="_blank">${record.name}</a>`;
+        let urlHtml = `<span>${record.name}</span>`;
+        if (record.url !== undefined && record.url !== null && record.url !== '') {
+          urlHtml = `<a href="${record.url}" target="_blank">${urlHtml}</a>`;
         }
         return `
-        <tr spwid="${record.id}">
-          <th scope="row">${urlHtml}</th>
-          <td title="Click To Copy" x-on:click="copytoclipboard" spwdata="${record.user}">${record.user}</td>
-          <td title="Click To Copy" x-on:click="copytoclipboard" spwdata="${record.password}">${record.password}</td>
-        </tr>
+        <div class="entry" spwid="${record.id}">
+          <div class="url">${urlHtml}</div>
+          <div class="field">
+            <span>Username: ${record.user}</span>
+            <button class="copy-btn">
+              <span class="material-icons" x-on:click="copytoclipboard" spwdata="${record.user}">content_copy</span>
+            </button>
+          </div>
+          <div class="field">
+            <span>Password: ${record.password}</span>
+            <button class="copy-btn">
+              <span class="material-icons" x-on:click="copytoclipboard" spwdata="${record.password}">content_copy</span>
+            </button>
+          </div>
+        </div>
         `;
       },
       // add new record
@@ -96,7 +104,7 @@ document.addEventListener("alpine:init", () => {
       },
       // validate form
       validateForm() {
-        this.showValidation = false;
+        this.showError = false;
         this.showSuccess = false;
         const isEmpty = str => !str.trim().length;
         let name = document.getElementById('name');
@@ -104,11 +112,11 @@ document.addEventListener("alpine:init", () => {
         let password = document.getElementById('password');
 
         if (isEmpty(name.value) || isEmpty(user.value) || isEmpty(password.value)) {
-          this.showValidation = true;
+          this.showError = true;
           return false;
         }
 
-        this.showValidation = false;
+        this.showError = false;
         return true;
       },
       // empty form
@@ -120,28 +128,25 @@ document.addEventListener("alpine:init", () => {
       },
       // show modal
       showModal(e) {
-        this.showValidation = false;
+        this.showError = false;
         this.showSuccess = false;
         this.isModalOpen = true;
       },
       // hide modal
       hideModal(e) {
-        this.showValidation = false;
+        this.showError = false;
         this.showSuccess = false;
         this.isModalOpen = false;
       },
       // copy to clipboard
       copytoclipboard(e) {
-        console.log(e.target.getAttribute("spwdata"));
-        var text = e.target.getAttribute("spwdata");
-        navigator.clipboard.writeText(text).then(
-          function () {
-            console.log("Async: Copying to clipboard was successful!");
-          },
-          function (err) {
-            console.error("Async: Could not copy text: ", err);
-          },
-        );
+        const copyButton = e.target;
+        var text = copyButton.getAttribute("spwdata");
+        navigator.clipboard.writeText(text);
+        copyButton.innerHTML = 'content_check';
+        setTimeout(() => {
+            copyButton.innerHTML = 'content_copy';
+        }, 2000);
       },
     };
   });
