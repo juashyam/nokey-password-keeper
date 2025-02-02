@@ -9,6 +9,7 @@ body {
   background-color: #f5f5f5;
   color: #333;
   padding-bottom: 60px;
+  padding-top: 90px;
 }
 
 .container {
@@ -21,9 +22,13 @@ body {
 
 /* Header */
 header {
+  position: fixed;
+  width: 100%;
   padding: 15px;
-  background-color: #6200ea;
+  background-color: #2C3A47;
   color: #fff;
+  top: 0;
+  z-index: 999;
 }
 
 header h1 {
@@ -68,16 +73,21 @@ header input {
   font-size: 14px;
 }
 
+.entry .field span.name {
+    font-weight: 600;
+}
+
 .entry .field button {
   background: none;
   border: none;
   cursor: pointer;
-  color: #6200ea;
+  color: #2C3A47;
   margin-left: 8px;
 }
 
 .entry .field button:hover {
-  opacity: 0.8;
+  /* opacity: 0.8; */
+  color: #686de0;
 }
 
 /* Add New */
@@ -93,16 +103,17 @@ header input {
   justify-content: center;
   width: 100%;
   padding: 8px;
-  background-color: #6200ea;
+  background-color: #2C3A47;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
 }
 
 .action-bar .add-entry:hover {
-  background-color: #3700b3;
+  background-color: #686de0;
 }
 
 /* Modal */
@@ -141,7 +152,7 @@ header input {
 
 .modal button {
     padding: 10px 20px;
-    background-color: #6200ea;
+    background-color: #2C3A47;
     color: white;
     border: none;
     border-radius: 4px;
@@ -150,7 +161,7 @@ header input {
 }
 
 .modal button:hover {
-    background-color: #3700b3;
+    background-color: #686de0;
 }
 .success-message {
     color: #28a745;
@@ -186,6 +197,6 @@ footer span {
 
 footer .disclaimer {
     margin: 5px 0;
-    font-size: 12px;
+    font-size: 10px;
     color: #6c757d;
 }

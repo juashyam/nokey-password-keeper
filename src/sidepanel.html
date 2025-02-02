@@ -11,12 +11,12 @@
         <div class="container">
             <header>
               <h1>NoKey - A Stupid Password Keeper</h1>
-              <!-- <input type="text" id="search" placeholder="Search..."> -->
+              <input type="text" id="search" placeholder="Search..." x-on:input="search">
             </header>
             <main>
                 <section class="action-bar">
                     <button class="add-entry" x-on:click="showModal">
-                      <span class="material-icons">add</span> Add New Entry
+                      <span class="material-icons">add</span> Add New
                     </button>
                 </section>
                 <section class="list-container">
@@ -26,13 +26,14 @@
                 <section class="addnew-modal-container" x-show="isModalOpen">
                     <div class="overlay" id="overlay"></div>
                     <div class="modal" id="modal" @click.away="hideModal">
+                        <input id="id" type="hidden" placeholder="ID">
                         <input id="name" type="text" placeholder="Enter Instance Name (Required)">
                         <input id="user" type="text" placeholder="Enter Username (Required)">
                         <input id="password" type="text" placeholder="Enter Password (Required)">
                         <input id="url" type="text" placeholder="Enter Url (Optional)">
                         <div class="error-message" x-show="showError">Please fill out all required fields.</div>
-                        <div class="success-message" x-show="showSuccess">Added new record successfully!</div>
-                        <button x-on:click="addNew">Save</button>
+                        <div class="success-message" x-show="showSuccess">Saved record successfully!</div>
+                        <button x-on:click="saveEntry">Save</button>
                         <button @click="hideModal">Close</button>
                     </div>
                 </section>
