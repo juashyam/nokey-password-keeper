@@ -71,6 +71,7 @@ header input {
 .entry .field span {
   flex-grow: 1;
   font-size: 14px;
+  word-break: break-all;
 }
 
 .entry .field span.name {
@@ -86,6 +87,7 @@ header input {
 
 .entry .field button span {
     cursor: pointer;
+    font-size: 16px;
 }
 
 .entry .field button span:hover {
