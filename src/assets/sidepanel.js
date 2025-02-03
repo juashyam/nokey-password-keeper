@@ -77,7 +77,10 @@ document.addEventListener("alpine:init", () => {
             </button>
           </div>
           <div class="field">
-            <span>Password: ${record.password}</span>
+            <span>Password: ••••••••</span>
+            <button class="toggle-pwd">
+              <span class="material-icons" x-on:click="togglePassword" data-spkdata="${record.password}">visibility</span>
+            </button>
             <button class="copy-btn">
               <span class="material-icons" x-on:click="copytoclipboard" data-spkdata="${record.password}">content_copy</span>
             </button>
@@ -113,6 +116,48 @@ document.addEventListener("alpine:init", () => {
           self.emptyForm();
           self.initAppData();
         };
+      },
+      // search
+      search() {
+        const searchTerm = document.getElementById('search').value.toLowerCase();
+        const pwListStore = this.dbConnection
+          .transaction("pwlist", "readonly")
+          .objectStore("pwlist");
+
+        pwListStore.getAll().onsuccess = (event) => {
+          let pwList = event.target.result.reverse();
+          let filteredList = pwList.filter(record =>
+            record.name.toLowerCase().includes(searchTerm) ||
+            record.user.toLowerCase().includes(searchTerm) ||
+            (record.url && record.url.toLowerCase().includes(searchTerm))
+          );
+          this.spm_pwlist_html = filteredList.map(record => this.renderRecord(record)).join('');
+        };
+      },
+      // edit record
+      editEntry(e) {
+        let self = this;
+        var record = JSON.parse(e.target.getAttribute("data-spkdata"));
+        document.getElementById('id').value = record.id;
+        document.getElementById('name').value = record.name;
+        document.getElementById('user').value = record.user;
+        document.getElementById('password').value = record.password;
+        document.getElementById('url').value = record.url;
+        self.showModal();
+      },
+      // delete record
+      deleteEntry(e) {
+        if (window.confirm("Are you sure?")) {
+          let self = this;
+          var id = parseInt(e.target.getAttribute("data-id"));
+          const pwListStore = self.dbConnection
+            .transaction("pwlist", "readwrite")
+            .objectStore("pwlist");
+          const deleteRequest = pwListStore.delete(id);
+          deleteRequest.onsuccess = () => {
+            self.initAppData(); // Refresh the list after deletion
+          };
+        }
       },
       // validate form
       validateForm() {
@@ -157,51 +202,22 @@ document.addEventListener("alpine:init", () => {
         const copyButton = e.target;
         var text = copyButton.getAttribute("data-spkdata");
         navigator.clipboard.writeText(text);
-        copyButton.innerHTML = 'content_check';
+        copyButton.innerHTML = 'done';
         setTimeout(() => {
             copyButton.innerHTML = 'content_copy';
         }, 2000);
       },
-      // search
-      search() {
-        const searchTerm = document.getElementById('search').value.toLowerCase();
-        const pwListStore = this.dbConnection
-          .transaction("pwlist", "readonly")
-          .objectStore("pwlist");
-
-        pwListStore.getAll().onsuccess = (event) => {
-          let pwList = event.target.result.reverse();
-          let filteredList = pwList.filter(record =>
-            record.name.toLowerCase().includes(searchTerm) ||
-            record.user.toLowerCase().includes(searchTerm) ||
-            (record.url && record.url.toLowerCase().includes(searchTerm))
-          );
-          this.spm_pwlist_html = filteredList.map(record => this.renderRecord(record)).join('');
-        };
-      },
-      // edit record
-      editEntry(e) {
-        let self = this;
-        var record = JSON.parse(e.target.getAttribute("data-spkdata"));
-        document.getElementById('id').value = record.id;
-        document.getElementById('name').value = record.name;
-        document.getElementById('user').value = record.user;
-        document.getElementById('password').value = record.password;
-        document.getElementById('url').value = record.url;
-        self.showModal();
-      },
-      // delete record
-      deleteEntry(e) {
-        if (window.confirm("Are you sure?")) {
-          let self = this;
-          var id = parseInt(e.target.getAttribute("data-id"));
-          const pwListStore = self.dbConnection
-            .transaction("pwlist", "readwrite")
-            .objectStore("pwlist");
-          const deleteRequest = pwListStore.delete(id);
-          deleteRequest.onsuccess = () => {
-            self.initAppData(); // Refresh the list after deletion
-          };
+      // toggle password
+      togglePassword(e) {
+        const toggleButton = e.target;
+        var password = toggleButton.getAttribute("data-spkdata");
+        const passwordField = toggleButton.parentElement.previousElementSibling;
+        if (passwordField.textContent.includes("••••••••")) {
+          passwordField.textContent = passwordField.textContent.replace("••••••••", password); // Replace with actual password
+          toggleButton.innerHTML = 'visibility_off';
+        } else {
+          passwordField.textContent = passwordField.textContent.replace(password, "••••••••"); // Replace with masked password
+          toggleButton.innerHTML = 'visibility';
         }
       },
     };

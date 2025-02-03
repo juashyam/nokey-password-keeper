@@ -80,12 +80,15 @@ header input {
 .entry .field button {
   background: none;
   border: none;
-  cursor: pointer;
   color: #2C3A47;
   margin-left: 8px;
 }
 
-.entry .field button:hover {
+.entry .field button span {
+    cursor: pointer;
+}
+
+.entry .field button span:hover {
   /* opacity: 0.8; */
   color: #686de0;
 }
