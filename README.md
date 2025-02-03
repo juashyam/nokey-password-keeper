@@ -22,12 +22,10 @@ Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and f
 
 **Note:** Select the **src** directory which contains the extension's source files, such as manifest.json, and then click the Select Folder button.
 
-
 ## 🖥 Preview
 
-<img width="366" alt="NoKey HomePage" src="https://github.com/user-attachments/assets/6d4113f2-fea4-46f6-8f2d-932bfd6af457" />
-<img width="373" alt="NoKey Add New" src="https://github.com/user-attachments/assets/0ac3c148-2d27-4692-a493-2dae26035b9a" />
-
+<img width="373" alt="NoKey HomePage" src="https://github.com/user-attachments/assets/c650857a-3a0e-4fbc-9b25-66b85f58db57" />
+<img width="373" alt="NoKey Add New" src="https://github.com/user-attachments/assets/00ca1c78-1e55-448d-ac9c-75297199b6e4" />
 
 ## 🏛️ License
 
