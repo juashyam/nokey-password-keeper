@@ -6,19 +6,21 @@ With its simple interface, you can quickly add, retrieve, and copy usernames and
 
 All data is stored locally, ensuring privacy and quick access. Download NoKey today and streamline your workflow!
 
-## ❗ Disclaimer
-
-It is highly influenced by my personal usage, not ready for production. Please feel free to use it at your discretion.
-
 ## 🚀 Installation
+
+### Edge
+
+On the extension’s page, click the Get to install.
+
+https://microsoftedge.microsoft.com/addons/detail/nokey-a-stupid-password/cfmibhgbkfignakcnbdilfegilgolmed
+
+### Chrome
 
 Instead of installing the extension from the Store, you'll install it locally, so that you can possibly modify it and quickly test the changes.
 
 Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and follow the instructions below for your respective browser.
 
 [Installation in Chrome](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
-
-[Installation in Microsoft Edge](https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/part1-simple-extension#install-the-sample-locally)
 
 **Note:** Select the **src** directory which contains the extension's source files, such as manifest.json, and then click the Select Folder button.
 
