@@ -18,7 +18,7 @@ https://microsoftedge.microsoft.com/addons/detail/nokey-a-stupid-password/cfmibh
 
 Instead of installing the extension from the Store, you'll install it locally, so that you can possibly modify it and quickly test the changes.
 
-Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and follow the instructions below for your respective browser.
+Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and follow the instructions below.
 
 [Installation in Chrome](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
 
