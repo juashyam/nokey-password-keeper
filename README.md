@@ -16,7 +16,7 @@ https://microsoftedge.microsoft.com/addons/detail/nokey-a-stupid-password/cfmibh
 
 ### Chrome
 
-Instead of installing the extension from the Store, you'll install it locally, so that you can possibly modify it and quickly test the changes.
+It is not deployed to Chrome Extension Store yet. So, instead of installing the extension from the Store, we'll have to install it locally.
 
 Clone this [repository](https://github.com/juashyam/nokey-password-keeper) and follow the instructions below.
 
