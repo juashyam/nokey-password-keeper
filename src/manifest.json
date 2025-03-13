@@ -1,7 +1,7 @@
 {
   "name": "NoKey - A Stupid Password Keeper",
   "short_name": "NoKey",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "description": "NoKey - A Stupid Password Keeper: Easily store and retrieve login credentials locally using IndexedDB. Perfect for developers!",
   "icons": {
